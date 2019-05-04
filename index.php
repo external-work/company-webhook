@@ -8,7 +8,7 @@ if($method == 'POST'){
 	$json = json_decode($requestBody);
 
 	$text = $json->queryResult->parameters->Company;
-
+  $text = "These are information pertaining ".$text;
 	// switch ($text) {
 	// 	case 'hi':
 	// 		$speech = "Hi, Nice to meet you";
@@ -38,7 +38,7 @@ if($method == 'POST'){
   $response = new \stdClass();
   $temp = new \stdClass();
   $response->fulfillmentMessages = array();
-  $temp->text->text = array( "Samarth Halyal is the best" );
+  $temp->text->text = array( $text );
   $response->fulfillmentMessages[0] = $temp;
 	echo json_encode($response);
 }
