@@ -36,7 +36,10 @@ if($method == 'POST'){
 	// $response["queryResult"]["fulfillmentText"] = "Hey! Sam, response from webhook";
 	// $response["queryResult"]["fulfillmentMessages"] = "Hey! Sam, response from webhook";
   $response = new \stdClass();
-  $response->fulfillmentMessages = array( $response->text->text = array( "Hey from samarth" ) );
+  $temp = new \stdClass();
+  $response->fulfillmentMessages = array();
+  $temp->text->text = array( "Hey from samarth" );
+  $response->fulfillmentMessages[0] = $temp;
 	echo json_encode($response);
 }
 else
