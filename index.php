@@ -30,43 +30,7 @@ if($method == 'POST'){
 	$response = new \stdClass();
 	// $response->queryResult->fulfillmentText = "Hey! Sam, response from webhook";
 	$response->responseId = $json->responseId;
-	// $response->queryResult = $json->queryResult;
-	$response->queryResult = json_encode({
-    "queryText": "can you tell me something about Mistral Solutions",
-    "parameters": {
-      "Company": "Mistral Solutions"
-    },
-    "allRequiredParamsPresent": true,
-    "fulfillmentText": "Hey! Sam, response from webhook",
-    "fulfillmentMessages": [
-      {
-        "platform": "ACTIONS_ON_GOOGLE",
-        "simpleResponses": {
-          "simpleResponses": [
-            {
-              "textToSpeech": "Hey! Sam, response from webhook"
-            }
-          ]
-        }
-      },
-      {
-        "text": {
-          "text": [
-            "Hey! Sam, response from webhook"
-          ]
-        }
-      }
-    ],
-    "intent": {
-      "name": "projects/company-f811e/agent/intents/90be1d8d-492d-4087-b8cb-624f5bd8c9bf",
-      "displayName": "Company"
-    },
-    "intentDetectionConfidence": 0.5830773,
-    "diagnosticInfo": {
-      "webhook_latency_ms": 302
-    },
-    "languageCode": "en"
-  });
+	$response->queryResult = $json->queryResult;
 	$response->webhookStatus->message = "Samarth is great";
 	// $response->queryResult->fulfillmentText = "Hey! Sam, response from webhook";
 	// $response["queryResult"]["fulfillmentText"] = "Hey! Sam, response from webhook";
