@@ -35,27 +35,9 @@ if($method == 'POST'){
 	// $response->queryResult->fulfillmentText = "Hey! Sam, response from webhook";
 	// $response["queryResult"]["fulfillmentText"] = "Hey! Sam, response from webhook";
 	// $response["queryResult"]["fulfillmentMessages"] = "Hey! Sam, response from webhook";
-	echo json_encode({
- "fulfillmentMessages": [
-      {
-        "platform": "ACTIONS_ON_GOOGLE",
-        "simpleResponses": {
-          "simpleResponses": [
-            {
-              "textToSpeech": "Hey from samarth"
-            }
-          ]
-        }
-      },
-      {
-        "text": {
-          "text": [
-            "Hey from samarth"
-          ]
-        }
-      }
-    ]
-});
+  $response = new \stdClass();
+  $response->fulfillmentMessages = array( $response->text->text = array( "Hey from samarth" ) );
+	echo json_encode($response);
 }
 else
 {
