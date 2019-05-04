@@ -27,15 +27,35 @@ if($method == 'POST'){
 	// 		break;
 	// }
 
-	$response = new \stdClass();
-	// $response->queryResult->fulfillmentText = "Hey! Sam, response from webhook";
-	$response->responseId = $json->responseId;
-	$response->queryResult = $json->queryResult;
-	$response->webhookStatus->message = "Samarth is great";
+	// $response = new \stdClass();
+	// // $response->queryResult->fulfillmentText = "Hey! Sam, response from webhook";
+	// $response->responseId = $json->responseId;
+	// $response->queryResult = $json->queryResult;
+	// $response->webhookStatus->message = "Samarth is great";
 	// $response->queryResult->fulfillmentText = "Hey! Sam, response from webhook";
 	// $response["queryResult"]["fulfillmentText"] = "Hey! Sam, response from webhook";
 	// $response["queryResult"]["fulfillmentMessages"] = "Hey! Sam, response from webhook";
-	echo json_encode($response);
+	echo json_encode({
+ "fulfillmentMessages": [
+      {
+        "platform": "ACTIONS_ON_GOOGLE",
+        "simpleResponses": {
+          "simpleResponses": [
+            {
+              "textToSpeech": "Hey from samarth"
+            }
+          ]
+        }
+      },
+      {
+        "text": {
+          "text": [
+            "Hey from samarth"
+          ]
+        }
+      }
+    ]
+});
 }
 else
 {
