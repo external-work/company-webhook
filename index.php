@@ -32,7 +32,7 @@ if($method == 'POST'){
 	$response->responseId = $json->responseId;
 	$response->queryResult = $json->queryResult;
 	$response->webhookStatus->message = "Webhook execution successful";
-	$response->queryResult->fulfillmentText = "Hey! Sam, response from webhook";
+	// $response->queryResult->fulfillmentText = "Hey! Sam, response from webhook";
 	echo json_encode($response);
 }
 else
