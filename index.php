@@ -38,7 +38,7 @@ if($method == 'POST'){
   $response = new \stdClass();
   $temp = new \stdClass();
   $response->fulfillmentMessages = array();
-  $temp->text->text = array( "Hey from samarth" );
+  $temp->text->text = array( "Samarth Halyal is the best" );
   $response->fulfillmentMessages[0] = $temp;
 	echo json_encode($response);
 }
