@@ -44,7 +44,7 @@ if($method == 'POST'){
         "simpleResponses": {
           "simpleResponses": [
             {
-              "textToSpeech": "wait a bit, ill check to see if i have something in my database!"
+              "textToSpeech": "Hey! Sam, response from webhook"
             }
           ]
         }
@@ -52,7 +52,7 @@ if($method == 'POST'){
       {
         "text": {
           "text": [
-            "wait a bit, ill check to see if i have something in my database!"
+            "Hey! Sam, response from webhook"
           ]
         }
       }
