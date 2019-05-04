@@ -2,39 +2,75 @@
 
 $method = $_SERVER['REQUEST_METHOD'];
 
-// Process only when method is POST
 if($method == 'POST'){
 	$requestBody = file_get_contents('php://input');
 	$json = json_decode($requestBody);
 
 	$text = $json->queryResult->parameters->Company;
-  $text = "These are information pertaining ".$text;
-	// switch ($text) {
-	// 	case 'hi':
-	// 		$speech = "Hi, Nice to meet you";
-	// 		break;
+  
+  switch ($text) {
+    case 'Microsoft':
+      $text = "These are information pertaining ".$text." in my database";
+      $text = $text."\nprogramming languages used are : c  c#  python";
+      $text = $text."\nNearest workplace : Bangalore, whitefield";
+      break;
+    
+    case 'Facebook':
+     $text = "These are information pertaining ".$text." in my database";
+      $text = $text."\nprogramming languages used are : php python  java  javascript";
+      $text = $text."\nNearest workplace : 1 Hacker Way 94025 Menlo Park, California";
+      break;
 
-	// 	case 'bye':
-	// 		$speech = "Bye, good night";
-	// 		break;
+    case 'Mistral Solutions':
+      $text = "These are information pertaining ".$text." in my database";
+      $text = $text."\nprogramming languages used are : c  java  python";
+      $text = $text."\nNearest workplace : Bangalore, Domlur";
+      break;
 
-	// 	case 'anything':
-	// 		$speech = "Yes, you can type anything here.";
-	// 		break;
-		
-	// 	default:
-	// 		$speech = "Sorry, I didnt get that. Please ask me something else.";
-	// 		break;
-	// }
+    case 'Mistral':
+      $text = "These are information pertaining ".$text." in my database";
+      $text = $text."\nprogramming languages used are : c  java  python";
+      $text = $text."\nNearest workplace : Bangalore, Domlur";
+      break;
 
-	// $response = new \stdClass();
-	// // $response->queryResult->fulfillmentText = "Hey! Sam, response from webhook";
-	// $response->responseId = $json->responseId;
-	// $response->queryResult = $json->queryResult;
-	// $response->webhookStatus->message = "Samarth is great";
-	// $response->queryResult->fulfillmentText = "Hey! Sam, response from webhook";
-	// $response["queryResult"]["fulfillmentText"] = "Hey! Sam, response from webhook";
-	// $response["queryResult"]["fulfillmentMessages"] = "Hey! Sam, response from webhook";
+    case 'Google':
+      $text = "These are information pertaining ".$text." in my database";
+      $text = $text."\nprogramming languages used are : python javascript";
+      $text = $text."\nNearest workplace : Mumbai";
+      break;
+
+    case 'tcs':
+      $text = "These are information pertaining ".$text." in my database";
+      $text = $text."\nprogramming languages used are : c  c++  python";
+      $text = $text."\nNearest workplace : Bangalore, whitefield";
+      break;
+
+    case 'mindtree':
+      $text = "These are information pertaining ".$text." in my database";
+      $text = $text."\nprogramming languages used are : c  c#  python";
+      $text = $text."\nNearest workplace : Bangalore, whitefield";
+      break;
+
+    case 'mercedes benz':
+      $text = "These are information pertaining ".$text." in my database";
+      $text = $text."\nprogramming languages used are : python java";
+      $text = $text."\nNearest workplace : Bangalore, whitefield";
+      break;
+
+    case 'mercedes':
+      $text = "These are information pertaining ".$text." in my database";
+      $text = $text."\nprogramming languages used are : python java";
+      $text = $text."\nNearest workplace : Bangalore, whitefield";
+      break;
+
+    default:
+      $text = "These are information pertaining ".$text." in my database";
+      $text = $text."\nprogramming languages used are : c  c++  python";
+      $text = $text."\nNearest workplace : Delhi, IT road 435";
+      break;
+  }
+
+	
   $response = new \stdClass();
   $temp = new \stdClass();
   $response->fulfillmentMessages = array();
